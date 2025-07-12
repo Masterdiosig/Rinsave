@@ -1,0 +1,34 @@
+[
+  {
+    "name": "msToken",
+    "value": "stJlK_LAWaDPKlYd2r4xrUzxmjjZi_FQcWT1tZMlU16oojjrCFI7Uy2YfvxCoT9XSt62GZoSJN0kfcpkrryljucvzQky2gVuEawqjTHuRLOqI0OdFGwXhCxCzP2IgX95n8EGf8Awz9S2vBwWdKbq4TmVfp4=",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "httpOnly": false,
+    "secure": true
+  },
+  {
+    "name": "sid_tt",
+    "value": "9a814f0f7a27d2f76fab57bd41878528",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "odin_tt",
+    "value": "a77f29af9463c087f47e211903919006b7a174e31b4fe7b104abac7a83e10928ec56837b86a3ee480ae5ade27fd83d6d18f1f747b59662d917014809287ef9a01fd8e405abd45971c49c810bd4a073a2",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "httpOnly": true,
+    "secure": true
+  },
+  {
+    "name": "sessionid",
+    "value": "9a814f0f7a27d2f76fab57bd41878528",
+    "domain": ".tiktok.com",
+    "path": "/",
+    "httpOnly": true,
+    "secure": true
+  }
+]

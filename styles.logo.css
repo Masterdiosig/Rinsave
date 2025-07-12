@@ -1,0 +1,33 @@
+.gradient-bg {
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  background: #ddff00;
+  background: -webkit-linear-gradient(90deg, #ddff00 0%, #00f767 52%, #ff00ae 100%);
+  background: -moz-linear-gradient(90deg, #ddff00 0%, #00f767 52%, #ff00ae 100%);
+  background: linear-gradient(90deg, #ddff00 0%, #00f767 52%, #ff00ae 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#DDFF00', endColorstr='#FF00AE', GradientType=1);
+}
+
+
+
+  .logo {
+    font-weight: bold;
+    font-size: 24px;
+    background: linear-gradient(90deg, #eaff00, #ff4b2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+  }
+
+  .dot-app {
+    font-size: 12px;
+    color: #0dff00;
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+  }
+
+  .logo:hover {
+  text-shadow: 0 0 5px #ffffff;
+}

@@ -1,0 +1,2 @@
+const html = await page.content();
+console.log(html); // test nếu video có render

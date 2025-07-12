@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Download TikTok Videos - No Logo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.logo.css">
+  <link rel="stylesheet" href="styles.ngonngu.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="shortcut icon" href="https://masterdiosig.github.io/snapth/snapth.png" type="image/x-icon"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+  <style>
+:root {
+  --toast-bg: #f44336;
+  --toast-color: #ffffff;
+}
+body.dark-mode {
+  --toast-bg: #333333;
+  --toast-color: #f8d7da;
+}
+
+    @keyframes fadeInOut {
+      0% { opacity: 0; bottom: 0px; }
+      10% { opacity: 1; bottom: 20px; }
+      90% { opacity: 1; bottom: 20px; }
+      100% { opacity: 0; bottom: 0px; }
+    }
+  </style>
+</head>
+<body>
+
+
+
+<header class="custom-header">
+  <link rel="stylesheet" href="menu.css">
+  <div class="logo">Snapth<span>.top</span></div>
+  <div class="header-controls">
+    <button id="toggle-theme" class="header-button">🌙</button>
+    <button class="menu-button header-button" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 1px 12px;
+      font-size: 20px;
+      border-radius: 6px;
+      z-index: 1001;
+      cursor: pointer;
+    }
+
+    .dropdown-menu {
+      position: fixed;
+      top: 60px;
+      right: 15px;
+      width: 60px;
+      background-color: #000;
+      border-radius: 10px;
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1000;
+
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-20px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-menu.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      margin: 10px 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .menu-icon:hover {
+      background-color: #222;
+    }
+
+    .menu-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: white;
+      stroke-width: 1.8;
+      fill: none;
+    }
+
+    .menu-icon a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+    }
+
+    .menu-icon a:hover {
+      background: none;
+    }
+
+    .menu-icon[title] {
+      position: relative;
+    }
+
+    .menu-icon[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      right: 50px;
+      background: #222;
+      color: #fff;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+  </style>
+
+    
+  
+</head>
+<body>
+  <!-- Menu xổ -->
+  <div class="dropdown-menu" id="dropdownMenu">
+    <!-- How to Use -->
+    <div class="menu-icon" title="How to Use">
+      <a href="/how-to-use">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2a10 10 0 1 1-10 10A10 10 0 0 1 12 2zm.25 5a1.25 1.25 0 1 0 1.25 1.25A1.25 1.25 0 0 0 12.25 7zm1.5 9v-1a2 2 0 0 0-4 0v1h4z"/>
+        </svg>
+      </a>
+    </div>
+
+  <script>
+    
+const menu = document.getElementById("dropdownMenu");
+    function toggleMenu() {
+      menu.classList.toggle("show");
+    }
+ 
+    window.addEventListener("click", (e) => {
+      const button = document.querySelector(".menu-button");
+      if (!menu.contains(e.target) && !button.contains(e.target)) {
+      
+        menu.classList.remove("show");
+      }
+    });
+    
+  </script>
+
+</body>
+</html>
+
+    <!-- Contact -->
+    <div class="menu-icon" title="Contact">
+      <a href="/contact">
+        <svg viewBox="0 0 24 24">
+          <path d="M4 4h16v16H4z M4 4l8 8 8-8" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="menu-icon" title="FAQ">
+      <a href="/faq">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 3a9 9 0 0 1 9 9c0 5-9 13-9 13S3 17 3 12a9 9 0 0 1 9-9zm0 4a1 1 0 1 0 1 1 1 1 0 0 0-1-1zm1 7h-2v-2h2v2z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Privacy -->
+    <div class="menu-icon" title="Privacy">
+      <a href="/privacy">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 2l7 4v5c0 5.25-3.75 10.75-7 13-3.25-2.25-7-7.75-7-13V6z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+
+
+  <div class="hero_simple">
+    <div class="container">
+      <h1>Download Videos</h1>
+      <p class="subtitle">Tidak ada logo – No watermark</p>
+
+ <form class="simple_form" name="formurl">
+        <input type="text" name="td_url" id="hf_urli" placeholder="Paste link here...">
+        <button type="submit" name="td_btn"><i class="fa fa-download"></i> Unduh</button>
+
+<div id="error-inline" style="
+  display: none;
+  background-color: #f44336;
+  color: #fff;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  animation: fadeIn 0.3s ease-in-out;
+">
+
+<style>
+.simple_form {
+  position: relative; /* để .error gắn bên trong */
+}
+
+#error-inline {
+  display: none;
+  position: absolute;
+  top: 48px; /* tuỳ chiều cao input */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+</style>
+
+
+  ⚠️ <span id="error-inline-msg">Có lỗi xảy ra.</span>
+</div>
+      </form>
+
+     
+    </div>
+  </div>
+
+
+ <script src="main.js"></script>
+
+  <div class="banner">
+    <img src="huongdan.png" alt="User manual" style="width: 100%; max-width: 600px; display: block; margin: 0 auto;" onclick="return false;" />
+  </div>
+
+  <div id="error-toast" style="
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--toast-bg);
+    color: var(--toast-color);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 9999;
+    animation: fadeInOut 4s forwards;
+  ">
+    <span id="error-toast-icon" style="margin-right: 8px;">⚠️</span>
+<span id="error-toast-msg">Có lỗi xảy ra. Vui lòng thử lại.</span>
+  </div>
+
+
+  <script>
+    const toggleThemeBtn = document.getElementById("toggle-theme");
+    const menuBtn = document.getElementById("menu-btn");
+
+    toggleThemeBtn.onclick = () => {
+      document.body.classList.toggle("dark-mode");
+      toggleThemeBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    };
+    menuBtn.onclick = () => {
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    };
+
+    function showErrorToast(message) {
+      const toast = document.getElementById('error-toast');
+      const msg = document.getElementById('error-toast-msg');
+      msg.textContent = message;
+      toast.style.display = 'block';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

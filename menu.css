@@ -1,0 +1,80 @@
+/* Class chung cho tất cả các nút trong header (theme + menu) */
+.header-button {
+  position: fixed;
+  top: 15px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  border: none;
+  padding: 1px 15px; /* ⬅️ tăng chiều cao và chiều ngang */
+  font-size: 20px;
+  border-radius: 8px; /* bo tròn đẹp hơn */
+  cursor: pointer;
+  z-index: 1002;
+  transition: background-color 0.2s;
+}
+
+.header-button:hover {
+  background-color: #d13535;
+}
+
+/* Nút 🌙 Dark Mode */
+#toggle-theme {
+  right: 89px;
+}
+
+/* Nút ☰ Menu */
+.menu-button {
+  right: 15px;
+  z-index: 1003;
+}
+
+
+
+.custom-header  {
+    width: 100%;
+  background-color: #000000;
+  border-bottom: 1px solid #222;
+  padding: 18px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.logo span {
+  color: orange;
+}
+
+.header-controls button {
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.hidden-menu {
+  display: none;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.hidden-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.hidden-menu ul li a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #fff;
+}
+
