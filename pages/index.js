@@ -22,7 +22,8 @@ export default function Home() {
     setVideoUrl(null);
 
     try {
-      const res = await fetch(`/api/tiktok?url=${encodeURIComponent(url)}`);
+      const res = await fetch(`https://<your-railway-url>/api/tiktok?url=${encodeURIComponent(url)}`);
+
       const data = await res.json();
       if (data.success) {
         setVideoUrl(data.download_url);
