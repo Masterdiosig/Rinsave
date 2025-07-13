@@ -23,12 +23,19 @@ export default async function handler(req, res) {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0 Safari/537.36'
     );
 
-    // Bắt URL video/mp4 từ response
-    let videoURL = null;
+    // Bắt URL video/mp4
+    let videoUrl = null;
+    await page.setRequestInterception(true);
+
+    page.on('request', (request) => {
+      request.continue();
+    });
+
     page.on('response', async (response) => {
       const ct = response.headers()['content-type'];
-      if (ct && ct.includes('video/mp4')) {
-        videoURL = response.url();
+      const url = response.url();
+      if (ct?.includes('video/mp4') && url.includes('video/tos')) {
+        videoUrl = url;
       }
     });
 
@@ -37,20 +44,20 @@ export default async function handler(req, res) {
       timeout: 0
     });
 
-    // Chờ để các response được bắt (có thể tăng nếu vẫn không thấy)
+    // Chờ cho request video xảy ra
     await page.waitForTimeout(5000);
-
     await browser.close();
 
-    if (videoURL) {
-      return res.status(200).json({ success: true, download_url: videoURL });
+    if (videoUrl) {
+      return res.status(200).json({ success: true, download_url: videoUrl });
     } else {
-      return res.status(404).json({ success: false, error: 'Không tìm thấy link video gốc.' });
+      return res.status(404).json({ success: false, error: 'Không bắt được video gốc (mp4).' });
     }
   } catch (err) {
     console.error('Lỗi Puppeteer:', err);
     return res.status(500).json({ success: false, error: 'Lỗi xử lý video.', detail: err.message });
   }
 }
+
 
 
