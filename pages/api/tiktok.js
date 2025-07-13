@@ -23,30 +23,29 @@ export default async function handler(req, res) {
       'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0 Safari/537.36'
     );
 
-    // 🟢 Quan trọng: đi tới URL TikTok trước khi extract video
+    // Bắt URL video/mp4 từ response
+    let videoURL = null;
+    page.on('response', async (response) => {
+      const ct = response.headers()['content-type'];
+      if (ct && ct.includes('video/mp4')) {
+        videoURL = response.url();
+      }
+    });
+
     await page.goto(url, {
       waitUntil: 'networkidle2',
       timeout: 0
     });
 
-    // Đợi video render
-    const videoSrc = await page.evaluate(() => {
-      return new Promise((resolve) => {
-        const check = () => {
-          const video = document.querySelector('video');
-          if (video && video.src) resolve(video.src);
-          else setTimeout(check, 1000);
-        };
-        check();
-      });
-    });
+    // Chờ để các response được bắt (có thể tăng nếu vẫn không thấy)
+    await page.waitForTimeout(5000);
 
     await browser.close();
 
-    if (videoSrc) {
-      return res.status(200).json({ success: true, download_url: videoSrc });
+    if (videoURL) {
+      return res.status(200).json({ success: true, download_url: videoURL });
     } else {
-      return res.status(404).json({ success: false, error: 'Không tìm thấy video.' });
+      return res.status(404).json({ success: false, error: 'Không tìm thấy link video gốc.' });
     }
   } catch (err) {
     console.error('Lỗi Puppeteer:', err);
